@@ -1,0 +1,103 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "generators": {
+    "@schematics/angular:component": {
+      "style": "scss"
+    }
+  },
+  "name": "ctk-wels.chuch",
+  "prefix": "app",
+  "projectType": "application",
+  "sourceRoot": "projects/ctk-wels.chuch/src",
+  "targets": {
+    "build": {
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true
+        },
+        "production": {
+          "budgets": [
+            {
+              "maximumError": "1MB",
+              "maximumWarning": "500kB",
+              "type": "initial"
+            },
+            {
+              "maximumError": "4kB",
+              "maximumWarning": "2kB",
+              "type": "anyComponentStyle"
+            }
+          ],
+          "outputHashing": "all"
+        }
+      },
+      "defaultConfiguration": "production",
+      "executor": "@angular-devkit/build-angular:application",
+      "options": {
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "public"
+          }
+        ],
+        "browser": "projects/ctk-wels.chuch/src/main.ts",
+        "index": "projects/ctk-wels.chuch/src/index.html",
+        "inlineStyleLanguage": "scss",
+        "outputPath": "dist/ctk-wels",
+        "polyfills": [
+          "zone.js"
+        ],
+        "prerender": true,
+        "scripts": [],
+        "server": "projects/ctk-wels.chuch/src/main.server.ts",
+        "ssr": {
+          "entry": "server.ts"
+        },
+        "styles": [
+          "@angular/material/prebuilt-themes/azure-blue.css",
+          "projects/ctk-wels.chuch/src/styles.scss"
+        ],
+        "tsConfig": "projects/ctk-wels.chuch/tsconfig.app.json"
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n"
+    },
+    "serve": {
+      "configurations": {
+        "development": {
+          "buildTarget": "projects-ctk-wels.chuch:build:development"
+        },
+        "production": {
+          "buildTarget": "projects-ctk-wels.chuch:build:production"
+        }
+      },
+      "defaultConfiguration": "development",
+      "executor": "@angular-devkit/build-angular:dev-server"
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "public"
+          }
+        ],
+        "inlineStyleLanguage": "scss",
+        "polyfills": [
+          "zone.js",
+          "zone.js/testing"
+        ],
+        "scripts": [],
+        "styles": [
+          "@angular/material/prebuilt-themes/azure-blue.css",
+          "projects/ctk-wels.chuch/src/styles.scss"
+        ],
+        "tsConfig": "projects/ctk-wels.chuch/tsconfig.spec.json"
+      }
+    }
+  }
+}
