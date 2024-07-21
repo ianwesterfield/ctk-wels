@@ -1,18 +1,18 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "sourceMap": true,
+    "baseUrl": ".",
     "declaration": false,
-    "moduleResolution": "bundler",
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "ES2022",
+    "lib": ["dom", "ES2022"],
     "module": "ES2022",
-    "lib": ["ES2022", "dom"],
-    "skipLibCheck": true,
-    "baseUrl": ".",
+    "moduleResolution": "bundler",
     "paths": {
-      "@ctk-wels/ctkng": ["projects/libs/src/index.ts"]
-    }
+      "@ctk-wels/ctk-ng": ["projects/ctk-ng/src/index.ts"]
+    },
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "target": "ES2022"
   }
 }

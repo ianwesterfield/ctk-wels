@@ -1,6 +1,6 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../dist/projects/libs",
+  "dest": "../../dist/projects/ctk-ng",
   "lib": {
     "entryFile": "src/index.ts"
   }

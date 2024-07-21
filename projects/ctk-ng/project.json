@@ -1,36 +1,40 @@
 {
-  "name": "ctk-ng",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "projects/libs/src",
+  "name": "ctk-ng",
   "prefix": "ctkng",
   "projectType": "library",
+  "sourceRoot": "projects/ctk-ng/src",
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nx/angular:package",
-      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
-      "options": {
-        "project": "projects/libs/ng-package.json"
-      },
       "configurations": {
-        "production": {
-          "tsConfig": "projects/libs/tsconfig.lib.prod.json"
-        },
         "development": {
-          "tsConfig": "projects/libs/tsconfig.lib.json"
+          "tsConfig": "projects/ctk-ng/tsconfig.lib.json"
+        },
+        "production": {
+          "tsConfig": "projects/ctk-ng/tsconfig.lib.prod.json"
         }
       },
-      "defaultConfiguration": "production"
-    },
-    "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "defaultConfiguration": "production",
+      "executor": "@nx/angular:package",
       "options": {
-        "jestConfig": "projects/libs/jest.config.ts"
-      }
+        "project": "projects/ctk-ng/ng-package.json"
+      },
+      "outputs": [
+        "{workspaceRoot}/dist/{projectRoot}"
+      ]
     },
     "lint": {
       "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "options": {
+        "jestConfig": "projects/ctk-ng/jest.config.ts"
+      },
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ]
     }
   }
 }

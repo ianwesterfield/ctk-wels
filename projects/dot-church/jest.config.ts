@@ -1,9 +1,9 @@
 /* eslint-disable */
 export default {
-  displayName: 'ctk-ng',
+  displayName: 'dot-church',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../coverage/projects',
+  coverageDirectory: '../../coverage/projects/dot-church',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',
