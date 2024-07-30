@@ -8,9 +8,6 @@
     "lib": ["dom", "ES2022"],
     "module": "ES2022",
     "moduleResolution": "bundler",
-    "paths": {
-      "@ctk-wels/ctk-ng": ["projects/ctk-ng/src/index.ts"]
-    },
     "skipLibCheck": true,
     "sourceMap": true,
     "target": "ES2022"
