@@ -10,6 +10,10 @@
     "moduleResolution": "bundler",
     "skipLibCheck": true,
     "sourceMap": true,
-    "target": "ES2022"
+    "target": "ES2022",
+    "paths": {
+      "@ctk/press": ["projects/press/src/index.ts"],
+      "@ctk/press/poc": ["projects/press/poc/src/index.ts"]
+    }
   }
 }
