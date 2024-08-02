@@ -1,5 +1,6 @@
 const { FlatCompat } = require('@eslint/eslintrc');
 const js = require('@eslint/js');
+const baseConfig = require('../../eslint.config.js');
 
 const compat = new FlatCompat({
   baseDirectory: __dirname,
@@ -7,6 +8,7 @@ const compat = new FlatCompat({
 });
 
 module.exports = [
+  baseConfig,
   ...compat
     .config({
       extends: [
@@ -23,7 +25,7 @@ module.exports = [
           'error',
           {
             type: 'attribute',
-            prefix: 'ctk',
+            prefix: 'ctkPress',
             style: 'camelCase',
           },
         ],
@@ -31,7 +33,7 @@ module.exports = [
           'error',
           {
             type: 'element',
-            prefix: 'ctk',
+            prefix: 'ctk-press',
             style: 'kebab-case',
           },
         ],

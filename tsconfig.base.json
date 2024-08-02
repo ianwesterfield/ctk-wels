@@ -8,12 +8,11 @@
     "lib": ["dom", "ES2022"],
     "module": "ES2022",
     "moduleResolution": "bundler",
+    "paths": {
+      "@ctk/press/*": ["projects/press/src/*"]
+    },
     "skipLibCheck": true,
     "sourceMap": true,
-    "target": "ES2022",
-    "paths": {
-      "@ctk/press": ["projects/press/src/index.ts"],
-      "@ctk/press/poc": ["projects/press/poc/src/index.ts"]
-    }
+    "target": "ES2022"
   }
 }

@@ -7,9 +7,9 @@
     "types": []
   },
   "exclude": [
-    "jest.config.ts",
     "**/*.spec.ts",
     "**/*.test.ts",
+    "jest.config.ts",
     "test-setup.ts"
   ],
   "extends": "./tsconfig.json",
