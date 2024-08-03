@@ -48,6 +48,7 @@
         ],
         "scripts": [],
         "styles": [
+          "@angular/material/prebuilt-themes/azure-blue.css",
           "projects/dot-church/src/styles.scss"
         ],
         "tsConfig": "projects/dot-church/tsconfig.app.json"

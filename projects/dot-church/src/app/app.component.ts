@@ -1,12 +1,15 @@
 
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, MatIconModule, MatButtonModule],
   selector: 'ctk-dc-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  templateUrl: './app.component.html'
 })
-export class AppComponent {}
+export class AppComponent {
+  constructor(public router: Router) {}
+}
