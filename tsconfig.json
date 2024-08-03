@@ -1,15 +1,21 @@
 {
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  },
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": ".",
     "declaration": false,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "lib": ["dom", "ES2022"],
+    "lib": ["DOM", "ES2022"],
     "module": "ES2022",
     "moduleResolution": "bundler",
     "paths": {
-      "@ctk/press/*": ["projects/press/src/*"]
+      "@ctk/press/*": ["projects/press/*"]
     },
     "skipLibCheck": true,
     "sourceMap": true,

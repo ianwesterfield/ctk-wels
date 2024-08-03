@@ -8,7 +8,7 @@ const compat = new FlatCompat({
 });
 
 module.exports = [
-  baseConfig,
+  ...baseConfig,
   ...compat
     .config({
       extends: [

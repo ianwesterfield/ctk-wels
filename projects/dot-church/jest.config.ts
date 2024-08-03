@@ -1,6 +1,6 @@
-/* eslint-disable */
+
 export default {
-  displayName: 'projects--dot-church',
+  displayName: 'dot-church',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   coverageDirectory: '../../coverage/projects/dot-church',

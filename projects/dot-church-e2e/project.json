@@ -1,9 +1,0 @@
-{
-  "name": "projects--dot-church-e2e",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "projectType": "application",
-  "sourceRoot": "projects/dot-church-e2e/src",
-  "implicitDependencies": ["projects--dot-church"],
-  "// targets": "to see all targets run: nx show project projects--dot-church-e2e --web",
-  "targets": {}
-}
