@@ -1,2 +1,2 @@
-export * from './src/public-api';
+export * from './src/window.service';
 

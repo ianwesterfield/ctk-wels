@@ -7,7 +7,7 @@
   },
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "./projects",
     "declaration": false,
     "experimentalDecorators": true,
     "importHelpers": true,
@@ -15,7 +15,7 @@
     "module": "ES2022",
     "moduleResolution": "bundler",
     "paths": {
-      "@ctk/press/*": ["projects/press/*"]
+      "@ctk/press/*": ["press/*"]
     },
     "skipLibCheck": true,
     "sourceMap": true,
