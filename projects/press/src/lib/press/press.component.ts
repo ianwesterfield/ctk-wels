@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'ctk-press',
+  selector: 'press-component',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './press.component.html',

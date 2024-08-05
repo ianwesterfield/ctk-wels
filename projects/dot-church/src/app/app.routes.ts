@@ -1,5 +1,5 @@
 import { Route } from '@angular/router';
-import { PocComponent } from '@ctk/press/poc';
+import { StoryblokPocComponent } from '@ctk/press/components/storyblok';
 
 export const appRoutes: Route[] = [
   {
@@ -7,7 +7,7 @@ export const appRoutes: Route[] = [
     children: [
       {
         path: 'poc',
-        component: PocComponent
+        component: StoryblokPocComponent
       }
     ]
   }
