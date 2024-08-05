@@ -1,13 +1,14 @@
 <button mat-flat-button routerLink="">
-  <mat-icon>chevron_left</mat-icon>Back
+  <mat-icon>chevron_left</mat-icon>
+  Back
 </button>
-
-<div class="root">
-  <div *ngIf="story.content">
+<mat-card>
+  <mat-card-title>{{ story.name }} (a.k.a. /poc)</mat-card-title>
+  <ng-container *ngIf="story.content">
     <ndc-dynamic
       [ndcDynamicComponent]="components[story.content.component]"
       [ndcDynamicInputs]="story.content"
     >
     </ndc-dynamic>
-  </div>
-</div>
+  </ng-container>
+</mat-card>

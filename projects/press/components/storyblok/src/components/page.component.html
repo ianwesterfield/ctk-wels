@@ -1,12 +1,10 @@
-<div>
-  <div [pressStoryblok]="_editable">
-    <div *ngFor="let blok of body">
-      <ndc-dynamic
-        *ngIf="components"
-        [ndcDynamicComponent]="components[blok.component]"
-        [ndcDynamicInputs]="blok"
-      >
-      </ndc-dynamic>
-    </div>
-  </div>
+<div [pressStoryblok]="editable">
+  <ng-container *ngFor="let blok of body">
+    <ndc-dynamic
+      *ngIf="components"
+      [ndcDynamicComponent]="components[blok.component]"
+      [ndcDynamicInputs]="blok"
+    >
+    </ndc-dynamic>
+  </ng-container>
 </div>

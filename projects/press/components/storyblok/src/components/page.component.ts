@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { DynamicModule } from 'ng-dynamic-component';
 import { StoryblokDirective } from '../directives/storyblok.directive';
-import { StoryblokService } from '../services/storyblok.service';
 
 @Component({
   selector: 'press-storyblok-page',
@@ -13,11 +12,11 @@ import { StoryblokService } from '../services/storyblok.service';
 })
 export class PageComponent {
   @Input() body: any[];
-  @Input() _editable: any;
+  @Input() editable: any;
 
   components: any;
 
-  constructor(private storyblok: StoryblokService) {
+  constructor() {
     import('./components').then(cp => {
       this.components = cp.StoryBlokComponents;
     });

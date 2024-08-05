@@ -11,15 +11,16 @@ export class StoryblokDirective implements OnInit {
   }
 
   ngOnInit() {
-    if (typeof this.pressStoryblok === 'undefined') {
+    if (!this.pressStoryblok) {
       return;
     }
 
     let options = JSON.parse(this.pressStoryblok.replace('<!--#storyblok#', '').replace('-->', ''));
 
+    console.log(options);
+
     this.el.nativeElement.setAttribute('data-blok-c', JSON.stringify(options));
     this.el.nativeElement.setAttribute('data-blok-uid', options.id + '-' + options.uid);
     this.el.nativeElement.classList.add("storyblok__outline");
   }
-
 }
