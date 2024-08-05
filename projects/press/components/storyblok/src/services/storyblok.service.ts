@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { of } from 'rxjs/internal/observable/of';
-import Client, { ISbStoryParams } from 'storyblok-js-client';
+import { from, Observable } from 'rxjs';
+import Client, { ISbStories, ISbStory, ISbStoryParams } from 'storyblok-js-client';
 
 @Injectable({
   providedIn: 'root'
@@ -15,11 +14,11 @@ export class StoryblokService {
 
   constructor() { }
 
-  getStory(slug: string, params?: ISbStoryParams): Observable<any> {
-    return of(this.sbClient.getStory(slug, params).then(res => res.data));
+  getStory(slug: string, params?: ISbStoryParams): Observable<ISbStory> {
+    return from(this.sbClient.getStory(slug, params));
   }
 
-  getStories(params?: ISbStoryParams): Observable<any> {
-    return of(this.sbClient.getStories(params).then(res => res.data));
+  getStories(params?: ISbStoryParams): Observable<ISbStories> {
+    return from(this.sbClient.getStories(params));
   }
 }

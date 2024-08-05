@@ -6,7 +6,6 @@ import { RouterModule } from '@angular/router';
 import { StoryblokService } from '@ctk/press/components/storyblok';
 import { WINDOW } from '@ctk/press/services/window';
 import { DynamicModule } from 'ng-dynamic-component';
-import { of } from 'rxjs/internal/observable/of';
 import { StoryBlokComponents } from '../components';
 
 declare global {
@@ -28,17 +27,13 @@ export class StoryblokPocComponent implements OnInit {
   constructor(@Inject(WINDOW) private window: Window, private storyblokService: StoryblokService) {
     this.window.storyblok.init();
     this.window.storyblok.on(['change', 'published'],  function() {
-      console.log('(1)');
       location.reload();
     });
   }
 
   ngOnInit() {
-    of(this.storyblokService.getStories({ version: 'draft' })).subscribe(values => {
+    this.storyblokService.getStories({ version: 'draft' }).subscribe(values => {
       console.log(values);
     })
-
-
-    // this.storyblokService.getStory('home', { version: 'draft'}).subscribe(data => this.story = data.story);
   }
 }
