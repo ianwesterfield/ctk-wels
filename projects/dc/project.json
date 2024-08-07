@@ -1,9 +1,9 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "name": "dot-church",
-  "prefix": "dot-church",
+  "name": "dc",
+  "prefix": "dc",
   "projectType": "application",
-  "sourceRoot": "projects/dot-church/src",
+  "sourceRoot": "projects/dc/src",
   "tags": [],
   "targets": {
     "build": {
@@ -35,32 +35,27 @@
         "assets": [
           {
             "glob": "**/*",
-            "input": "projects/dot-church/public"
+            "input": "dc/public"
           }
         ],
-        "browser": "projects/dot-church/src/main.ts",
-        "index": "projects/dot-church/src/index.html",
+        "browser": "projects/dc/src/main.ts",
+        "index": "projects/dc/src/index.html",
         "inlineStyleLanguage": "scss",
-        "outputPath": "dist/projects/dot-church",
-        "polyfills": [
-          "zone.js",
-          "@angular/localize/init"
-        ],
+        "outputPath": "dist/dc",
+        "polyfills": ["@angular/localize/init", "zone.js"],
         "scripts": [],
         "styles": [
           "@angular/material/prebuilt-themes/azure-blue.css",
-          "projects/dot-church/src/styles.scss"
+          "projects/dc/src/styles.scss"
         ],
-        "tsConfig": "projects/dot-church/tsconfig.app.json"
+        "tsConfig": "projects/dc/tsconfig.app.json"
       },
-      "outputs": [
-        "{options.outputPath}"
-      ]
+      "outputs": ["{options.outputPath}"]
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "buildTarget": "dot-church:build"
+        "buildTarget": "dc:build"
       }
     },
     "lint": {
@@ -69,10 +64,10 @@
     "serve": {
       "configurations": {
         "development": {
-          "buildTarget": "dot-church:build:development"
+          "buildTarget": "dc:build:development"
         },
         "production": {
-          "buildTarget": "dot-church:build:production"
+          "buildTarget": "dc:build:production"
         }
       },
       "defaultConfiguration": "development",
@@ -81,11 +76,9 @@
     "test": {
       "executor": "@nx/jest:jest",
       "options": {
-        "jestConfig": "projects/dot-church/jest.config.ts"
+        "jestConfig": "dc/jest.config.ts"
       },
-      "outputs": [
-        "{workspaceRoot}/coverage/{projectRoot}"
-      ]
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"]
     }
   }
 }

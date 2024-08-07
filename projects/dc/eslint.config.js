@@ -25,7 +25,7 @@ module.exports = [
           'error',
           {
             type: 'attribute',
-            prefix: 'ctkDc',
+            prefix: 'dc',
             style: 'camelCase',
           },
         ],
@@ -33,7 +33,7 @@ module.exports = [
           'error',
           {
             type: 'element',
-            prefix: 'ctk-dc',
+            prefix: 'dc',
             style: 'kebab-case',
           },
         ],

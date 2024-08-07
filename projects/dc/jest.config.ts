@@ -1,9 +1,8 @@
-
 export default {
-  displayName: 'dot-church',
-  preset: '../../jest.preset.js',
+  displayName: 'dc',
+  preset: '../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../coverage/projects/dot-church',
+  coverageDirectory: '../coverage/dc',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',
