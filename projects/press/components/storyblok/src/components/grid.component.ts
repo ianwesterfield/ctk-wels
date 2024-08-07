@@ -3,6 +3,7 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { DynamicModule } from 'ng-dynamic-component';
 import { StoryblokService } from '../services/storyblok.service';
 import { StoryblokDirective } from './../directives/storyblok.directive';
+import { StoryBlokComponents } from './components';
 
 @Component({
   selector: 'press-storyblok-grid',
@@ -17,11 +18,8 @@ export class GridComponent {
   @Input() columns: any[];
   @Input() editable: any;
 
-  components: any;
+  components = StoryBlokComponents;
 
   constructor(private storyblok: StoryblokService) {
-    import('./components').then(cp => {
-      this.components = cp.StoryBlokComponents;
-    });
   }
 }

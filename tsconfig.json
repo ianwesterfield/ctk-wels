@@ -15,7 +15,9 @@
     "module": "ES2022",
     "moduleResolution": "Bundler",
     "paths": {
-      "@ctk/press/*": ["press/*"]
+      "@ctk/dc/*": ["dc/*"],
+      "@ctk/press/*": ["press/*"],
+      "@ctk/press/components/*": ["press/components/*"]
     },
     "skipLibCheck": true,
     "sourceMap": true,
