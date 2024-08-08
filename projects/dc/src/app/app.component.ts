@@ -1,24 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { RouterModule } from '@angular/router';
+import { config } from '@ctk/dc/src/environments/environment';
+import { PressShellComponent } from '@ctk/press/components/shell';
 import { StoryblokService } from '@ctk/press/components/storyblok';
 import { WINDOW_PROVIDERS } from '@ctk/press/services/window';
-import { config } from '../environments/environment';
-import { PressShellComponent } from './../../../press/components/shell/src/shell.component';
 
 @Component({
   standalone: true,
-  imports: [
-    CommonModule,
-    PressShellComponent,
-    RouterModule,
-    MatIconModule,
-    MatButtonModule,
-    MatToolbarModule,
-  ],
+  imports: [CommonModule, PressShellComponent],
   providers: [
     WINDOW_PROVIDERS,
     StoryblokService,
@@ -26,6 +15,5 @@ import { PressShellComponent } from './../../../press/components/shell/src/shell
   ],
   selector: 'dc-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {}
