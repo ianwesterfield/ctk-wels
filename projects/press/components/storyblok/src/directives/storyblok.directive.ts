@@ -2,25 +2,27 @@ import { Directive, ElementRef, Input, OnInit } from '@angular/core';
 
 @Directive({
   selector: '[pressStoryblok]',
-  standalone: true
+  standalone: true,
 })
 export class StoryblokDirective implements OnInit {
   @Input() pressStoryblok: string;
 
-  constructor(private el: ElementRef) {
-  }
+  constructor(private el: ElementRef) {}
 
   ngOnInit() {
     if (!this.pressStoryblok) {
       return;
     }
 
-    let options = JSON.parse(this.pressStoryblok.replace('<!--#storyblok#', '').replace('-->', ''));
-
-    console.log(options);
+    let options = JSON.parse(
+      this.pressStoryblok.replace('<!--#storyblok#', '').replace('-->', ''),
+    );
 
     this.el.nativeElement.setAttribute('data-blok-c', JSON.stringify(options));
-    this.el.nativeElement.setAttribute('data-blok-uid', options.id + '-' + options.uid);
-    this.el.nativeElement.classList.add("storyblok__outline");
+    this.el.nativeElement.setAttribute(
+      'data-blok-uid',
+      options.id + '-' + options.uid,
+    );
+    this.el.nativeElement.classList.add('storyblok__outline');
   }
 }
