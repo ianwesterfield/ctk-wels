@@ -8,7 +8,7 @@ import { StoryblokDirective } from '../directives/storyblok.directive';
   imports: [CommonModule, StoryblokDirective],
   templateUrl: './feature.component.html',
 })
-export class StoryblokFeatureComponent {
+export class FeatureComponent {
   @Input() name: string;
   @Input() component: any;
   @Input() _uid: any;
