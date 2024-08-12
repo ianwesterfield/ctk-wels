@@ -1,4 +1,3 @@
-export * from '../../../../dc/src/app/poc/poc.component';
 export * from './components/components';
 export * from './components/feature.component';
 export * from './components/grid.component';
