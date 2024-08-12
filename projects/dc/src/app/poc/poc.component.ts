@@ -49,8 +49,8 @@ declare global {
 export class StoryblokPocComponent implements OnInit, OnDestroy {
   story = { content: null, name: '' };
   components = StoryBlokComponents;
-  isViewportSmall = false;
 
+  private isViewportSmall = false;
   private destroyed: Subject<void> = new Subject<void>();
 
   constructor(
@@ -67,8 +67,11 @@ export class StoryblokPocComponent implements OnInit, OnDestroy {
     this.breakpointObserver
       .observe([Breakpoints.XSmall, Breakpoints.Small])
       .pipe(takeUntil(this.destroyed))
-      .subscribe((result) => {});
+      .subscribe((result) => {
+        this.isViewportSmall = result.matches;
+      });
   }
+
   ngOnDestroy(): void {
     this.destroyed.next();
     this.destroyed.complete();
@@ -79,6 +82,11 @@ export class StoryblokPocComponent implements OnInit, OnDestroy {
       .getStories({ version: 'draft' })
       .subscribe((values) => {
         this.story = values.data.stories[0];
+        // console.log(this.story);
       });
+  }
+
+  get gridItemArea() {
+    return this.isViewportSmall ? 'span 1 / span 12' : '1 / span 6';
   }
 }
