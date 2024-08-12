@@ -52,9 +52,6 @@ export class StoryblokPocComponent implements OnInit, OnDestroy {
   isViewportSmall = false;
 
   private destroyed: Subject<void> = new Subject<void>();
-  private gridArea: { rows: number | string; cols: number | string }[] = [
-    { rows: 1, cols: 'span 6' },
-  ];
 
   constructor(
     @Inject(WINDOW) private window: Window,
@@ -64,16 +61,13 @@ export class StoryblokPocComponent implements OnInit, OnDestroy {
     this.window.storyblok.init();
 
     this.window.storyblok.on(['change', 'published'], function () {
-      console.log('storyblok event (change or published) received');
       location.reload();
     });
 
     this.breakpointObserver
       .observe([Breakpoints.XSmall, Breakpoints.Small])
       .pipe(takeUntil(this.destroyed))
-      .subscribe((result) => {
-        console.log(result, this.isViewportSmall);
-      });
+      .subscribe((result) => {});
   }
   ngOnDestroy(): void {
     this.destroyed.next();
