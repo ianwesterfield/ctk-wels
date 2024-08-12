@@ -1,4 +1,3 @@
-
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { DynamicModule } from 'ng-dynamic-component';
@@ -9,14 +8,15 @@ import { StoryBlokComponents } from './components';
   selector: 'press-storyblok-page',
   templateUrl: './page.component.html',
   standalone: true,
-  imports: [CommonModule, StoryblokDirective, DynamicModule]
+  imports: [CommonModule, StoryblokDirective, DynamicModule],
 })
 export class PageComponent {
   @Input() body: any[];
-  @Input() editable: any;
+  @Input() _uid: string;
+  @Input() _editable: string;
+  @Input() component: any;
 
   components = StoryBlokComponents;
 
-  constructor() {
-  }
+  constructor() {}
 }

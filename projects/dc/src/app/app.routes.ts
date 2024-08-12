@@ -1,5 +1,6 @@
+import { StoryblokPocComponent } from '@ctk/dc/src/app/poc/poc.component';
+
 import { Route } from '@angular/router';
-import { StoryblokPocComponent } from '@ctk/press/components/storyblok';
 
 export const appRoutes: Route[] = [
   {

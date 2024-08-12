@@ -36,6 +36,10 @@
           {
             "glob": "**/*",
             "input": "dc/public"
+          },
+          {
+            "glob": "**/*",
+            "input": "press/assets"
           }
         ],
         "browser": "projects/dc/src/main.ts",
@@ -45,7 +49,7 @@
         "polyfills": ["@angular/localize/init", "zone.js"],
         "scripts": [],
         "styles": [
-          "@angular/material/prebuilt-themes/azure-blue.css",
+          "projects/press/assets/styles/index.scss",
           "projects/dc/src/styles.scss"
         ],
         "tsConfig": "projects/dc/tsconfig.app.json"
