@@ -1,12 +1,11 @@
-<press-header></press-header>
-<mat-drawer-container autosize>
-  <mat-drawer #drawer class="--sidenav" mode="over">
-    <p>Auto-resizing sidenav</p>
-  </mat-drawer>
-  <div>
-    <button type="button" mat-button (click)="drawer.toggle()">
-      Toggle sidenav
-    </button>
-  </div>
-  <router-outlet></router-outlet>
-</mat-drawer-container>
+<section wrapper>
+  <header>
+    <press-header></press-header>
+  </header>
+  <main>
+    <mat-drawer-container autosize>
+      <mat-drawer #drawer class="--sidenav" mode="over"></mat-drawer>
+      <router-outlet></router-outlet>
+    </mat-drawer-container>
+  </main>
+</section>

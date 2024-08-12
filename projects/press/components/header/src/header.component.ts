@@ -20,7 +20,5 @@ import { RouterModule } from '@angular/router';
   encapsulation: ViewEncapsulation.None,
 })
 export class PressHeaderComponent {
-  constructor(@Inject('APP_CONFIG') public config: any) {
-    console.log(config);
-  }
+  constructor(@Inject('APP_CONFIG') public config: any) {}
 }

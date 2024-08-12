@@ -11,15 +11,15 @@ import { StoryBlokComponents } from './components';
   styleUrls: ['./grid.component.scss'],
   encapsulation: ViewEncapsulation.None,
   standalone: true,
-  imports: [CommonModule, StoryblokDirective, DynamicModule]
+  imports: [CommonModule, StoryblokDirective, DynamicModule],
 })
-
 export class GridComponent {
+  @Input() component: any;
   @Input() columns: any[];
-  @Input() editable: any;
+  @Input() _uid: any;
+  @Input() _editable: any;
 
   components = StoryBlokComponents;
 
-  constructor(private storyblok: StoryblokService) {
-  }
+  constructor(private storyblok: StoryblokService) {}
 }

@@ -10,5 +10,7 @@ import { StoryblokDirective } from '../directives/storyblok.directive';
 })
 export class StoryblokFeatureComponent {
   @Input() name: string;
-  @Input() editable: any;
+  @Input() component: any;
+  @Input() _uid: any;
+  @Input() _editable: any;
 }

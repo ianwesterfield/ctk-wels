@@ -6,9 +6,11 @@ import { StoryblokDirective } from './../directives/storyblok.directive';
   selector: 'press-storyblok-teaser',
   standalone: true,
   imports: [CommonModule, StoryblokDirective],
-  templateUrl: './teaser.component.html'
+  templateUrl: './teaser.component.html',
 })
 export class TeaserComponent {
   @Input() headline: string;
-  @Input() editable: any;
+  @Input() component: any;
+  @Input() _uid: string;
+  @Input() _editable: any;
 }

@@ -1,0 +1,22 @@
+<div class="press-dashboard-grid">
+  <mat-card class="press-grid-card">
+    <mat-card-title>{{ story.name }} (a.k.a. /poc)</mat-card-title>
+    <ng-container *ngIf="story.content">
+      <ndc-dynamic
+        [ndcDynamicComponent]="components[story.content.component]"
+        [ndcDynamicInputs]="story.content"
+      >
+      </ndc-dynamic>
+    </ng-container>
+  </mat-card>
+  <mat-card class="press-grid-card">
+    <mat-card-title>{{ story.name }} (a.k.a. /poc)</mat-card-title>
+    <ng-container *ngIf="story.content">
+      <ndc-dynamic
+        [ndcDynamicComponent]="components[story.content.component]"
+        [ndcDynamicInputs]="story.content"
+      >
+      </ndc-dynamic>
+    </ng-container>
+  </mat-card>
+</div>
