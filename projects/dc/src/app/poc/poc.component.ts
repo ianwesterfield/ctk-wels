@@ -82,11 +82,10 @@ export class StoryblokPocComponent implements OnInit, OnDestroy {
       .getStories({ version: 'draft' })
       .subscribe((values) => {
         this.story = values.data.stories[0];
-        // console.log(this.story);
       });
   }
 
   get gridItemArea() {
-    return this.isViewportSmall ? 'span 1 / span 12' : '1 / span 6';
+    return 'span 12 / span 12';
   }
 }

@@ -9,14 +9,4 @@
       </ndc-dynamic>
     </ng-container>
   </mat-card>
-  <mat-card class="press-grid-card" [style.grid-area]="gridItemArea">
-    <mat-card-title>{{ story.name }}</mat-card-title>
-    <ng-container *ngIf="story.content">
-      <ndc-dynamic
-        [ndcDynamicComponent]="components[story.content.component]"
-        [ndcDynamicInputs]="story.content"
-      >
-      </ndc-dynamic>
-    </ng-container>
-  </mat-card>
 </div>
