@@ -1,13 +1,11 @@
-import { FeatureComponent } from './feature.component';
+import { ArticleComponent } from './article.component';
 import { GridComponent } from './grid.component';
 import { PageComponent } from './page.component';
-import { TeaserComponent } from './teaser.component';
 
 const StoryBlokComponents = {
   page: PageComponent,
-  teaser: TeaserComponent,
+  article: ArticleComponent,
   grid: GridComponent,
-  feature: FeatureComponent,
 };
 
 export { StoryBlokComponents };
