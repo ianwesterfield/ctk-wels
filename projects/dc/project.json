@@ -49,8 +49,6 @@
         "polyfills": ["@angular/localize/init", "zone.js"],
         "scripts": [],
         "styles": [
-          "node_modules/ckeditor5-premium-features/dist/ckeditor5-premium-features.css",
-          "node_modules/ckeditor5/dist/ckeditor5.css",
           "projects/dc/src/styles.scss",
           "projects/press/assets/styles/index.scss"
         ],

@@ -1,8 +1,4 @@
-import {
-  BreakpointObserver,
-  Breakpoints,
-  LayoutModule,
-} from '@angular/cdk/layout';
+import { BreakpointObserver, LayoutModule } from '@angular/cdk/layout';
 import { CommonModule } from '@angular/common';
 import {
   Component,
@@ -21,7 +17,6 @@ import {
 } from '@ctk/press/components/storyblok';
 import { WINDOW } from '@ctk/press/services/window';
 import { DynamicModule } from 'ng-dynamic-component';
-import { takeUntil } from 'rxjs/internal/operators/takeUntil';
 import { Subject } from 'rxjs/internal/Subject';
 
 declare global {
@@ -50,7 +45,6 @@ export class StoryblokPocComponent implements OnInit, OnDestroy {
   story = { content: null, name: '' };
   components = StoryBlokComponents;
 
-  private isViewportSmall = false;
   private destroyed: Subject<void> = new Subject<void>();
 
   constructor(
@@ -63,13 +57,6 @@ export class StoryblokPocComponent implements OnInit, OnDestroy {
     this.window.storyblok.on(['change', 'published'], function () {
       location.reload();
     });
-
-    this.breakpointObserver
-      .observe([Breakpoints.XSmall, Breakpoints.Small])
-      .pipe(takeUntil(this.destroyed))
-      .subscribe((result) => {
-        this.isViewportSmall = result.matches;
-      });
   }
 
   ngOnDestroy(): void {
@@ -80,8 +67,9 @@ export class StoryblokPocComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.storyblokService
       .getStories({ version: 'draft' })
-      .subscribe((values) => {
-        this.story = values.data.stories[0];
+      .subscribe((value) => {
+        this.story = value.data.stories[0];
+        console.log(this.story);
       });
   }
 
