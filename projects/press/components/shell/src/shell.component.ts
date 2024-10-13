@@ -1,21 +1,17 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { RouterModule } from '@angular/router';
-import { PressHeaderComponent } from '@ctk/press/components/header';
+import { PressHeaderComponent } from '../../header';
 
 @Component({
+  imports: [CommonModule, MatButtonModule, MatSidenavModule, RouterModule, PressHeaderComponent],
   selector: 'press-shell',
-  imports: [
-    CommonModule,
-    MatButtonModule,
-    MatSidenavModule,
-    RouterModule,
-    PressHeaderComponent,
-  ],
   standalone: true,
-  templateUrl: './shell.component.html',
   styleUrls: ['./shell.component.scss'],
+  templateUrl: './shell.component.html',
 })
-export class PressShellComponent {}
+export class PressShellComponent {
+  constructor(@Inject('APP_CONFIG') public config: any) {}
+}

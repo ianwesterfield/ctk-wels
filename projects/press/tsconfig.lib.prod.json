@@ -1,9 +1,11 @@
 {
-  "extends": "./tsconfig.lib.json",
+  "angularCompilerOptions": {
+    "compilationMode": "partial",
+    "generateCodeForLibraries": true,
+    "preserveWhitespace": false
+  },
   "compilerOptions": {
     "declarationMap": false
   },
-  "angularCompilerOptions": {
-    "compilationMode": "partial"
-  }
+  "extends": "./tsconfig.lib.json"
 }

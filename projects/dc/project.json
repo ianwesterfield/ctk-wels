@@ -48,10 +48,7 @@
         "outputPath": "dist/dc",
         "polyfills": ["@angular/localize/init", "zone.js"],
         "scripts": [],
-        "styles": [
-          "projects/dc/src/styles.scss",
-          "projects/press/assets/styles/index.scss"
-        ],
+        "styles": ["projects/press/assets/styles/index.scss"],
         "tsConfig": "projects/dc/tsconfig.app.json"
       },
       "outputs": ["{options.outputPath}"]

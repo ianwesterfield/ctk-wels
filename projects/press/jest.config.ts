@@ -1,7 +1,7 @@
 export default {
   displayName: 'press',
   preset: '../../jest.preset.js',
-  setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
+  setupFilesAfterEnv: ['<rootDir >/test-setup.ts'],
   coverageDirectory: '../../coverage/projects/press',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
