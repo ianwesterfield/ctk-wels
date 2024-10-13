@@ -1,9 +1,9 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "name": "press",
-  "prefix": "ctk-press",
+  "prefix": "press",
   "projectType": "library",
-  "sourceRoot": "projects/press/src",
+  "sourceRoot": "projects/press",
   "tags": [],
   "targets": {
     "build": {
@@ -18,11 +18,10 @@
       "defaultConfiguration": "production",
       "executor": "@nx/angular:package",
       "options": {
-        "project": "projects/press/ng-package.json"
+        "project": "projects/press/ng-package.json",
+        "tsConfig": "projects/press/tsconfig.lib.json"
       },
-      "outputs": [
-        "{workspaceRoot}/dist/{projectRoot}"
-      ]
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"]
     },
     "lint": {
       "executor": "@nx/eslint:lint"
@@ -32,9 +31,7 @@
       "options": {
         "jestConfig": "projects/press/jest.config.ts"
       },
-      "outputs": [
-        "{workspaceRoot}/coverage/{projectRoot}"
-      ]
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"]
     }
   }
 }

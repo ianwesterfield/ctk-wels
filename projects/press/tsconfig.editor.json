@@ -1,0 +1,6 @@
+{
+  "compilerOptions": {},
+  "exclude": ["**/*.spec.ts", "**/*.test.ts", "jest.config.ts"],
+  "extends": "tsconfig.lib.json",
+  "include": ["**/*.ts"]
+}

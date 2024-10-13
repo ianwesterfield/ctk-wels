@@ -1,12 +1,8 @@
-<div class="press-dashboard-grid">
+<section pressContentGrid>
   <mat-card class="press-grid-card" [style.grid-area]="gridItemArea">
-    <mat-card-title>{{ story.content.title }}</mat-card-title>
-    <ng-container *ngIf="story">
-      <ndc-dynamic
-        [ndcDynamicComponent]="components[story.content?.component]"
-        [ndcDynamicInputs]="story?.content"
-      >
-      </ndc-dynamic>
-    </ng-container>
+    <mat-card-title>{{ article?.content?.title }}</mat-card-title>
+    <mat-card-content>
+      <press-storyblok-article [article]="article"></press-storyblok-article>
+    </mat-card-content>
   </mat-card>
-</div>
+</section>

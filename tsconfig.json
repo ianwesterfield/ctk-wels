@@ -1,26 +1,37 @@
 {
   "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    // "annotateForClosureCompiler": true,
+    // "cacheMetadata": false,
+    // "enableI18nLegacyMessageIdFormat": false,
+    // "fullTemplateTypeCheck": true,
+    // "skipTemplateCodegen": true,
+    // "strictInjectionParameters": true,
+    // "strictInputAccessModifiers": true,
+    // "strictMetadataEmit": true,
+    // "strictTemplates": true
   },
-  "compileOnSave": false,
+  "compileOnSave": true,
   "compilerOptions": {
-    "baseUrl": "./projects",
-    "declaration": false,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    // "declaration": true,
+    // "declarationMap": true,
     "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
+    // "inlineSources": true,
     "lib": ["dom", "es2022"],
     "module": "es2022",
     "moduleResolution": "Bundler",
+    "outDir": "./dist/out-tsc",
     "paths": {
-      "@ctk/dc/*": ["dc/*"],
-      "@ctk/press/*": ["press/*"],
-      "@ctk/press/components/*": ["press/components/*"]
-    },
-    "skipLibCheck": true,
-    "sourceMap": true,
-    "target": "es2022"
-  }
+      "@ctk/press/*": ["projects/press/*"]
+    }
+    // "resolveJsonModule": true,
+    // "sourceMap": true,
+    // "target": "es2022"
+    // "useDefineForClassFields": true
+  },
+  // "exclude": ["dist", "node_modules", "tmp"],
+  "include": ["**/*.ts"]
 }
