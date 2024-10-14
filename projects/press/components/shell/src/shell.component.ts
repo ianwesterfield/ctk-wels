@@ -3,7 +3,7 @@ import { Component, Inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { RouterModule } from '@angular/router';
-import { PressHeaderComponent } from '../../header';
+import { PressHeaderComponent } from 'dist/projects/press/components/header';
 
 @Component({
   imports: [CommonModule, MatButtonModule, MatSidenavModule, RouterModule, PressHeaderComponent],

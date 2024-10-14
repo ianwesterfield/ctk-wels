@@ -1,1 +1,1 @@
-export * from './src/header.component';
+export * from './src/public-api';

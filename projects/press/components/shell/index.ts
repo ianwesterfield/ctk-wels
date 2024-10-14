@@ -1,1 +1,1 @@
-export * from './src/shell.component';
+export * from './src/public-api';
