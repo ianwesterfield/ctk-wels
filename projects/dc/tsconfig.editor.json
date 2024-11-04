@@ -1,6 +1,0 @@
-{
-  "compilerOptions": {},
-  "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"],
-  "extends": "./tsconfig.app.json",
-  "include": ["src/**/*.ts"]
-}
