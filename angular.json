@@ -1,52 +1,112 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1,
+  "cli": {
+    "analytics": false
+  },
   "newProjectRoot": "projects",
   "projects": {
     "press": {
-      "projectType": "library",
-      "root": "projects/press",
-      "sourceRoot": "projects/press/src",
-      "prefix": "prs",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "projects/press/ng-package.json"
-          },
           "configurations": {
-            "production": {
-              "tsConfig": "projects/press/tsconfig.lib.prod.json"
-            },
             "development": {
               "tsConfig": "projects/press/tsconfig.lib.json"
+            },
+            "production": {
+              "tsConfig": "projects/press/tsconfig.lib.prod.json"
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "production",
+          "options": {
+            "project": "projects/press/ng-package.json"
+          }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/press/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
+            "polyfills": ["zone.js", "zone.js/testing"],
+            "tsConfig": "projects/press/tsconfig.spec.json"
           }
         }
-      }
+      },
+      "prefix": "prs",
+      "projectType": "library",
+      "root": "projects/press",
+      "sourceRoot": "projects/press/src"
     },
     "www": {
-      "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "inlineTemplate": true,
-          "inlineStyle": true,
-          "style": "scss",
-          "skipTests": true
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "configurations": {
+            "development": {
+              "extractLicenses": false,
+              "optimization": false,
+              "sourceMap": true
+            },
+            "production": {
+              "budgets": [
+                {
+                  "maximumError": "1MB",
+                  "maximumWarning": "500kB",
+                  "type": "initial"
+                },
+                {
+                  "maximumError": "4kB",
+                  "maximumWarning": "2kB",
+                  "type": "anyComponentStyle"
+                }
+              ],
+              "outputHashing": "all"
+            }
+          },
+          "defaultConfiguration": "production",
+          "options": {
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/www/public"
+              }
+            ],
+            "browser": "projects/www/src/main.ts",
+            "index": "projects/www/src/index.html",
+            "inlineStyleLanguage": "scss",
+            "outputPath": "dist/www",
+            "polyfills": ["zone.js"],
+            "scripts": [],
+            "styles": ["projects/www/src/styles.scss"],
+            "tsConfig": "projects/www/tsconfig.app.json"
+          }
         },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "development": {
+              "buildTarget": "www:build:development"
+            },
+            "production": {
+              "buildTarget": "www:build:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        }
+      },
+      "prefix": "app",
+      "projectType": "application",
+      "root": "projects/www",
+      "schematics": {
         "@schematics/angular:class": {
           "skipTests": true
+        },
+        "@schematics/angular:component": {
+          "inlineStyle": true,
+          "inlineTemplate": true,
+          "skipTests": true,
+          "style": "scss"
         },
         "@schematics/angular:directive": {
           "skipTests": true
@@ -67,76 +127,8 @@
           "skipTests": true
         }
       },
-      "root": "projects/www",
-      "sourceRoot": "projects/www/src",
-      "prefix": "app",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:application",
-          "options": {
-            "outputPath": "dist/www",
-            "index": "projects/www/src/index.html",
-            "browser": "projects/www/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
-            "tsConfig": "projects/www/tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "projects/www/public"
-              }
-            ],
-            "styles": [
-              "@angular/material/prebuilt-themes/azure-blue.css",
-              "projects/www/src/styles.scss"
-            ],
-            "scripts": []
-          },
-          "configurations": {
-            "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "2kB",
-                  "maximumError": "4kB"
-                }
-              ],
-              "outputHashing": "all"
-            },
-            "development": {
-              "optimization": false,
-              "extractLicenses": false,
-              "sourceMap": true
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "configurations": {
-            "production": {
-              "buildTarget": "www:build:production"
-            },
-            "development": {
-              "buildTarget": "www:build:development"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n"
-        }
-      }
+      "sourceRoot": "projects/www/src"
     }
   },
-  "cli": {
-    "analytics": false
-  }
+  "version": 1
 }
