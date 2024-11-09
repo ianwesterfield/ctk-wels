@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { MatToolbarModule } from "@angular/material/toolbar";
 
 @Component({
-  selector: "prs-shell",
+  selector: "press-shell",
   standalone: true,
   imports: [MatToolbarModule],
   templateUrl: "./shell.component.html",

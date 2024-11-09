@@ -1,0 +1,45 @@
+@use "@angular/material" as mat;
+@use "../helpers" as helpers;
+
+body {
+  &.press-theme-uw {
+    $primary-color: rgba(73, 47, 36, 1);
+    $secondary-color: rgba(144, 108, 38, 1);
+    $accent-color: rgba(216, 169, 41, 1);
+
+    $primary-palette: helpers.theme-gen-create-palette($primary-color);
+    $accent-palette: helpers.theme-gen-create-palette($accent-color);
+
+    $warn: mat.m2-define-palette(mat.$m2-red-palette);
+    $primary: mat.m2-define-palette($primary-palette);
+    $accent: mat.m2-define-palette($accent-palette);
+
+    $theme: mat.m2-define-dark-theme(
+      (
+        color: (
+          primary: $primary,
+          accent: $accent,
+          warn: $warn,
+        ),
+        typography: mat.m2-define-typography-config(),
+        density: 0,
+      )
+    );
+
+    $background-gradient: linear-gradient(
+      to bottom,
+      $primary-color 25%,
+      $secondary-color 75%,
+      $accent-color 100%
+    );
+
+    @include mat.all-component-themes($theme);
+
+    background: $background-gradient !important;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+
+    --mdc-elevated-card-container-color: rgba(0, 0, 0, 0.06);
+    --mat-app-surface-container-low: rgba(0, 0, 0, 0.06);
+  }
+}

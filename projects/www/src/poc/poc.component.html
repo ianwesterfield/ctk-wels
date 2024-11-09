@@ -1,0 +1,8 @@
+<section pressContentGrid>
+  <mat-card class="press-grid-card" [style.grid-area]="gridItemArea">
+    <mat-card-title>{{ article?.content?.title }}</mat-card-title>
+    <mat-card-content>
+      <press-article [article]="article"></press-article>
+    </mat-card-content>
+  </mat-card>
+</section>

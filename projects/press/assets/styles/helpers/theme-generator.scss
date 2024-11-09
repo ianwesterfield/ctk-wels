@@ -1,3 +1,5 @@
+// adapted from https://lsparagino.medium.com/sass-only-material-angular-palette-generator-35dd406a6b81
+
 @use "sass:math";
 @use "sass:map";
 
@@ -45,7 +47,7 @@ $values: (
     $contrast: map.merge(
       $contrast,
       (
-        $v: getContrast(map_get($palette, $v)),
+        $v: get-contrast(map_get($palette, $v)),
       )
     );
   }
@@ -67,16 +69,16 @@ $values: (
   @return rgb($r, $g, $b);
 }
 
-@function getBrightness($color) {
+@function get-brightness($color) {
   @return (red($color) * 299 + green($color) * 587 + blue($color) * 114) / 1000;
 }
 
-@function isLight($color) {
-  @return getBrightness($color) >= 128;
+@function is-light($color) {
+  @return get-brightness($color) >= 128;
 }
 
-@function getContrast($color) {
-  @if isLight($color) {
+@function get-contrast($color) {
+  @if is-light($color) {
     @return #000;
   } @else {
     @return #fff;
