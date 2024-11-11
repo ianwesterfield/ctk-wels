@@ -1,10 +1,10 @@
 import { Component } from "@angular/core";
-import { MatToolbarModule } from "@angular/material/toolbar";
+import { HeaderComponent } from "../../header/header.component";
 
 @Component({
   selector: "press-shell",
   standalone: true,
-  imports: [MatToolbarModule],
+  imports: [HeaderComponent],
   templateUrl: "./shell.component.html",
   styleUrl: "./shell.component.scss",
 })

@@ -68,6 +68,6 @@ export class StoryblokPocComponent implements OnInit, OnDestroy {
   }
 
   get gridItemArea() {
-    return "1 / 1";
+    return "1 / 3";
   }
 }

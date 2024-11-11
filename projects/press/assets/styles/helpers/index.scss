@@ -1,1 +1,2 @@
-@forward "./theme-generator.scss" as theme-gen-*;
+@forward "./_palette-generator" as palette-gen-*;
+@forward "./_typography" as typo-*;

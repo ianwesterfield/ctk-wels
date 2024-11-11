@@ -1,14 +1,17 @@
+@use "sass:math" as math;
 @use "@angular/material" as mat;
 @use "../helpers" as helpers;
 
+@import url("https://use.typekit.net/swi4hyn.css");
+
 body {
   &.press-theme-uw {
-    $primary-color: rgba(73, 47, 36, 1);
-    $secondary-color: rgba(144, 108, 38, 1);
-    $accent-color: rgba(216, 169, 41, 1);
+    $primary-color: hsl(18, 34%, 21%);
+    $secondary-color: hsl(40, 58%, 36%);
+    $accent-color: hsl(44, 69%, 50%);
 
-    $primary-palette: helpers.theme-gen-create-palette($primary-color);
-    $accent-palette: helpers.theme-gen-create-palette($accent-color);
+    $primary-palette: helpers.palette-gen-create-palette($primary-color);
+    $accent-palette: helpers.palette-gen-create-palette($accent-color);
 
     $warn: mat.m2-define-palette(mat.$m2-red-palette);
     $primary: mat.m2-define-palette($primary-palette);
@@ -21,23 +24,21 @@ body {
           accent: $accent,
           warn: $warn,
         ),
-        typography: mat.m2-define-typography-config(),
+        typography: helpers.$typo-text-levels,
         density: 0,
       )
     );
 
     $background-gradient: linear-gradient(
-      to bottom,
-      $primary-color 25%,
-      $secondary-color 75%,
-      $accent-color 100%
+      180deg,
+      hsl(18, 34%, 21%) 10%,
+      hsl(18, 34%, 15%) 100%
     );
 
     @include mat.all-component-themes($theme);
 
     background: $background-gradient !important;
     margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
 
     --mdc-elevated-card-container-color: rgba(0, 0, 0, 0.06);
     --mat-app-surface-container-low: rgba(0, 0, 0, 0.06);
